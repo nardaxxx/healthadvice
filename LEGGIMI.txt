@@ -35,15 +35,17 @@ COME PUBBLICARLO
     <link rel="canonical" href="https://TUODOMINIO/pagina.html">
   e crea una sitemap.xml con i quattro indirizzi.
 
-MODULO CONTATTI (aggiunto il 15 novembre 2026)
-  In index.html ("Stay in Touch") e in contact.html ("Write to Me") c'e' un modulo che invia i dati a
-  Formspree, un servizio gratuito che tiene la rubrica dei contatti e manda un'email per ogni invio.
-  FINCHE' NON E' ATTIVATO il pulsante "Send" apre il programma di posta del visitatore con i dati gia'
-  scritti verso kristine.k@dr.com: funziona comunque, ma senza rubrica automatica.
-  PER ATTIVARLO (una volta sola):
-    1. Registrarsi su https://formspree.io con l'email che ricevera' i contatti e confermarla.
+NEWSLETTER (aggiunta il 15 novembre 2026)
+  In fondo a index.html c'e' il riquadro "Newsletter": il visitatore lascia la sua email, che finisce
+  nella rubrica di Formspree (servizio gratuito, 50 iscrizioni al mese; l'elenco si scarica come file).
+  Per ogni iscrizione arriva anche un'email. La pagina Contact ha solo telefono ed email normali,
+  piu' il pulsante "Write to Kristine" che apre il programma di posta.
+  FINCHE' NON E' ATTIVATA il pulsante "Subscribe" apre il programma di posta del visitatore con una
+  richiesta di iscrizione gia' scritta verso kristine.k@dr.com: funziona comunque, senza rubrica automatica.
+  PER ATTIVARLA (una volta sola):
+    1. Registrarsi su https://formspree.io con l'email che ricevera' le iscrizioni e confermarla.
     2. "+ New form", nome "Health Advice": Formspree mostra un indirizzo tipo https://formspree.io/f/xabcdwxyz
-    3. In index.html e contact.html sostituire la parola FORMSPREE_ID con il codice (es. xabcdwxyz).
-       Sono due punti in tutto, uno per pagina. Poi ricaricare i file su GitHub.
-  La pagina thanks.html e' quella mostrata dopo l'invio.
+    3. In index.html sostituire la parola FORMSPREE_ID con il codice (es. xabcdwxyz): un punto solo.
+       Poi ricaricare il file su GitHub.
+  La pagina thanks.html e' quella mostrata dopo l'iscrizione.
   Il modulo per il NAS Synology (file di testo sul NAS) e' nella cartella ../nas-modulo, non attivo.

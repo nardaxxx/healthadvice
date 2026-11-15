@@ -72,17 +72,17 @@
     </section>
 
     <section class="content band">
-      <h2>Stay in Touch</h2>
-      <p class="lead">Leave your email and Kristine will contact you personally.</p>
+      <h2>Newsletter</h2>
+      <p class="lead">Leave your email to receive news and health updates from Kristine.</p>
       <form class="contact-form inline-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
         <label for="home-email" class="visually-hidden">Email</label>
         <input id="home-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
         <input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off">
-        <input type="hidden" name="_subject" value="New subscriber from Health Advice">
+        <input type="hidden" name="_subject" value="New newsletter subscriber - Health Advice">
         <input type="hidden" name="_next" value="https://nardaxxx.github.io/healthadvice/thanks.html">
-        <button type="submit" class="button">Keep me informed</button>
+        <button type="submit" class="button">Subscribe</button>
       </form>
-      <p class="small-note">By sending your email you agree that it is stored so that Kristine can contact you. No newsletters, no third parties.</p>
+      <p class="small-note">By subscribing you agree that your email is stored to send you Kristine's updates. You can unsubscribe at any time by writing to <a href="mailto:kristine.k@dr.com">kristine.k@dr.com</a>.</p>
     </section>
   </main>
 
@@ -92,17 +92,16 @@
     <p class="small">The information on this website is for general guidance and does not replace the advice of your treating physician.</p>
   </footer>
   <script>
-    // Finché il modulo non è attivato (codice Formspree mancante), "Send" apre
-    // il programma di posta con i dati già compilati. Per attivare: sostituire
-    // FORMSPREE_ID con il codice del modulo in questa pagina e in contact.html.
+    // Finché la newsletter non è attivata (codice Formspree mancante), "Subscribe"
+    // apre il programma di posta con una richiesta di iscrizione già scritta.
+    // Per attivare: sostituire FORMSPREE_ID con il codice del modulo in questa pagina.
     document.querySelectorAll('form.contact-form').forEach(function (form) {
       if (!form.action.includes('FORMSPREE_ID')) return;
       form.addEventListener('submit', function (event) {
         event.preventDefault();
-        var get = function (n) { var f = form.elements[n]; return f ? f.value.trim() : ''; };
-        var body = 'Name: ' + get('name') + '\nEmail: ' + get('email') + '\n\n' + get('message');
-        location.href = 'mailto:kristine.k@dr.com?subject=' + encodeURIComponent('Contact from Health Advice') +
-                        '&body=' + encodeURIComponent(body);
+        var email = form.elements['email'] ? form.elements['email'].value.trim() : '';
+        location.href = 'mailto:kristine.k@dr.com?subject=' + encodeURIComponent('Newsletter subscription - Health Advice') +
+                        '&body=' + encodeURIComponent('Please add me to your newsletter: ' + email);
       });
     });
   </script>
