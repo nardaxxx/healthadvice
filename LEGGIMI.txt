@@ -34,3 +34,16 @@ COME PUBBLICARLO
   Quando conosci l'indirizzo definitivo, aggiungi in ogni pagina, dentro <head>:
     <link rel="canonical" href="https://TUODOMINIO/pagina.html">
   e crea una sitemap.xml con i quattro indirizzi.
+
+MODULO CONTATTI (aggiunto il 15 novembre 2026)
+  In index.html ("Stay in Touch") e in contact.html ("Write to Me") c'e' un modulo che invia i dati a
+  Formspree, un servizio gratuito che tiene la rubrica dei contatti e manda un'email per ogni invio.
+  FINCHE' NON E' ATTIVATO il pulsante "Send" apre il programma di posta del visitatore con i dati gia'
+  scritti verso kristine.k@dr.com: funziona comunque, ma senza rubrica automatica.
+  PER ATTIVARLO (una volta sola):
+    1. Registrarsi su https://formspree.io con l'email che ricevera' i contatti e confermarla.
+    2. "+ New form", nome "Health Advice": Formspree mostra un indirizzo tipo https://formspree.io/f/xabcdwxyz
+    3. In index.html e contact.html sostituire la parola FORMSPREE_ID con il codice (es. xabcdwxyz).
+       Sono due punti in tutto, uno per pagina. Poi ricaricare i file su GitHub.
+  La pagina thanks.html e' quella mostrata dopo l'invio.
+  Il modulo per il NAS Synology (file di testo sul NAS) e' nella cartella ../nas-modulo, non attivo.

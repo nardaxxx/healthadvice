@@ -70,6 +70,20 @@
       </div>
       <p class="actions"><a class="button" href="about.html">Learn more about us</a></p>
     </section>
+
+    <section class="content band">
+      <h2>Stay in Touch</h2>
+      <p class="lead">Leave your email and Kristine will contact you personally.</p>
+      <form class="contact-form inline-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
+        <label for="home-email" class="visually-hidden">Email</label>
+        <input id="home-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+        <input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="New subscriber from Health Advice">
+        <input type="hidden" name="_next" value="https://nardaxxx.github.io/healthadvice/thanks.html">
+        <button type="submit" class="button">Keep me informed</button>
+      </form>
+      <p class="small-note">By sending your email you agree that it is stored so that Kristine can contact you. No newsletters, no third parties.</p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -77,5 +91,20 @@
     <p>Contact: <a href="mailto:kristine.k@dr.com">kristine.k@dr.com</a> &middot; <a href="tel:+17078580182">+1 707 858 0182</a></p>
     <p class="small">The information on this website is for general guidance and does not replace the advice of your treating physician.</p>
   </footer>
+  <script>
+    // Finché il modulo non è attivato (codice Formspree mancante), "Send" apre
+    // il programma di posta con i dati già compilati. Per attivare: sostituire
+    // FORMSPREE_ID con il codice del modulo in questa pagina e in contact.html.
+    document.querySelectorAll('form.contact-form').forEach(function (form) {
+      if (!form.action.includes('FORMSPREE_ID')) return;
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var get = function (n) { var f = form.elements[n]; return f ? f.value.trim() : ''; };
+        var body = 'Name: ' + get('name') + '\nEmail: ' + get('email') + '\n\n' + get('message');
+        location.href = 'mailto:kristine.k@dr.com?subject=' + encodeURIComponent('Contact from Health Advice') +
+                        '&body=' + encodeURIComponent(body);
+      });
+    });
+  </script>
 </body>
 </html>
