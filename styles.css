@@ -1,0 +1,242 @@
+/* Health Advice — Kristine Health Consulting
+   Palette e caratteri del sito originale: blu navy #003366, hover #00509e,
+   sfondo #f5f5f5, Arial. Un solo foglio di stile per tutte le pagine. */
+
+:root {
+  --navy: #003366;
+  --navy-light: #00509e;
+  --bg: #f5f5f5;
+  --card: #ffffff;
+  --card-border: #dcdfe4;
+  --text: #333333;
+  --muted: #5b6471;
+  --max: 900px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1; }
+
+a { color: var(--navy); }
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #fff;
+  padding: 0.5em 1em;
+}
+.skip:focus { left: 1em; z-index: 10; }
+
+/* Intestazione e menu */
+.site-header {
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5em 1.5em;
+  padding: 0.6em 1em;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25em;
+  letter-spacing: 0.02em;
+}
+.brand-mark { width: 1.3em; height: 1.3em; fill: #fff; }
+
+.site-header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+}
+.site-header nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+.site-header nav a:hover,
+.site-header nav a:focus-visible { background: var(--navy-light); }
+.site-header nav a[aria-current="page"] { background: rgba(255, 255, 255, 0.16); }
+
+/* Apertura della home */
+.hero {
+  background: #fff;
+  border-bottom: 1px solid var(--card-border);
+  padding: 2.5em 1em 0;
+  text-align: center;
+}
+.hero-text { max-width: var(--max); margin: 0 auto; }
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(2em, 5vw, 3em);
+  margin: 0 0 0.3em;
+}
+.hero img {
+  display: block;
+  width: 100%;
+  max-width: 845px;
+  height: auto;
+  margin: 1.5em auto 0;
+}
+
+.page-title {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  padding: 3em 1em;
+}
+.page-title h1 { margin: 0; font-size: clamp(2em, 5vw, 3em); }
+.page-title .lead { color: #e6edf5; margin: 0.4em 0 0; }
+
+.lead { font-size: 1.2em; color: var(--muted); }
+
+/* Blocchi di testo */
+.content {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.5em 1em;
+}
+.content h2 {
+  color: var(--navy);
+  font-size: 1.8em;
+  margin: 1.2em 0 0.5em;
+  text-align: center;
+}
+.content > h2:first-child { margin-top: 0; }
+.content p { margin: 0 0 1em; }
+
+.band {
+  max-width: none;
+  background: #e9eef5;
+  text-align: center;
+}
+.band .lead { max-width: var(--max); margin: 0 auto; color: var(--navy); }
+
+/* Schede */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2em;
+  margin: 1.5em 0;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-left: 5px solid var(--navy);
+  border-radius: 8px;
+  padding: 1.3em 1.5em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+.card h2, .card h3 {
+  color: var(--navy);
+  text-align: left;
+  font-size: 1.2em;
+  margin: 0 0 0.5em;
+}
+.card p { margin: 0; }
+
+.services {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5em;
+  display: grid;
+  gap: 1.2em;
+  counter-reset: service;
+}
+.services .card { counter-increment: service; }
+.services .card h2::before {
+  content: counter(service) ". ";
+  color: var(--navy-light);
+}
+
+.contact-cards { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.contact-card {
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  transition: background-color 0.3s;
+}
+.contact-card:hover { background: #eef3f9; }
+.contact-card .label {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.contact-card .value {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: var(--navy);
+  word-break: break-all;
+}
+
+/* Pulsanti */
+.actions { text-align: center; margin: 1.5em 0 0; }
+.button {
+  display: inline-block;
+  background: var(--navy);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.75em 1.5em;
+  border-radius: 4px;
+  margin: 0.3em;
+  transition: background-color 0.3s;
+}
+.button:hover, .button:focus-visible { background: var(--navy-light); }
+.button-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+.button-outline:hover, .button-outline:focus-visible { background: var(--navy); color: #fff; }
+
+/* Piè di pagina */
+.site-footer {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  padding: 1.5em 1em;
+  font-size: 0.95em;
+}
+.site-footer p { margin: 0.3em 0; }
+.site-footer a { color: #fff; }
+.site-footer .small { font-size: 0.85em; color: #c9d4e2; margin-top: 0.8em; }
+
+@media (max-width: 600px) {
+  .site-header { justify-content: center; text-align: center; }
+  .site-header nav ul { justify-content: center; }
+  .content { padding: 2em 1em; }
+}

@@ -1,0 +1,36 @@
+HEALTH ADVICE - Kristine Health Consulting
+Sito rifatto il 15 novembre 2026 a partire da web.zip (pagine del dicembre 2024 / febbraio 2025).
+
+COSA C'E'
+  index.html      Home (apertura con l'illustrazione originale, benvenuto, tre schede, pulsanti)
+  about.html      About Us (presentazione di Kristine, filosofia, i quattro paragrafi "oltre i protocolli")
+  services.html   Services (i sei servizi come schede numerate)
+  contact.html    Contact (telefono ed email cliccabili)
+  404.html        pagina per gli indirizzi sbagliati
+  styles.css      unico foglio di stile per tutte le pagine (prima ogni pagina aveva il suo, diverso)
+  favicon.svg     icona della scheda del browser (croce bianca su blu navy)
+  images/health-advice.jpg   l'illustrazione originale (virus-bacteria.jpg)
+  robots.txt
+
+COSA E' CAMBIATO RISPETTO ALL'ORIGINALE
+  - Tutti i collegamenti sono relativi: il sito funziona su qualsiasi dominio e anche aperto dal disco.
+    Prima puntavano a https://healthadvice.synology.me e si rompevano altrove.
+  - Testi e messaggio invariati (seconda opinione, medicina biologica, servizi, contatti).
+    Corretti solo refusi e punteggiatura; tolta la frase "licensed ... in the United States" che nelle
+    versioni finali era gia' stata rimossa.
+  - Telefono: usato quello della pagina contatti piu' recente (febbraio 2025): +1 707 858 0182.
+    Le versioni di dicembre 2024 avevano quello svizzero 0041 31 526 8082.
+    Per cambiarlo: cerca "7078580182" in contact.html e nel pie' di pagina di ogni pagina.
+  - Il modulo "Subscribe to our newsletter" e' stato tolto: inviava a /subscribe, un indirizzo che su un
+    sito statico non esiste. Al suo posto ci sono i pulsanti verso Servizi e Contatti.
+  - Il pie' di pagina non e' piu' fisso in fondo allo schermo (copriva il testo sui telefoni) e contiene
+    una riga di avvertenza standard: le informazioni non sostituiscono il medico curante.
+  - Menu uguale su tutte le pagine, leggibile anche su telefono; pagina corrente evidenziata.
+
+COME PUBBLICARLO
+  GitHub Pages (gratis, come humanflag.org): crea un repository, carica il contenuto di questa cartella
+  (non la cartella stessa: index.html deve stare alla radice), attiva Pages dalle impostazioni.
+  Qualsiasi altro hosting: carica gli stessi file nella cartella pubblica (public_html, www, htdocs).
+  Quando conosci l'indirizzo definitivo, aggiungi in ogni pagina, dentro <head>:
+    <link rel="canonical" href="https://TUODOMINIO/pagina.html">
+  e crea una sitemap.xml con i quattro indirizzi.
