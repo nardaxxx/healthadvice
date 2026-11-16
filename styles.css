@@ -223,6 +223,10 @@ a { color: var(--navy); }
 }
 .button-outline:hover, .button-outline:focus-visible { background: var(--navy); color: #fff; }
 
+/* Nota sul ruolo (pagina About) */
+.role-note { margin: 1.5em 0 0; background: #eef3f9; }
+.role-note p { margin: 0; }
+
 /* Moduli di contatto (Formspree) */
 .contact-form {
   display: grid;
